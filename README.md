@@ -1,11 +1,12 @@
 # YouTube Video Downloader Script
 
-This script allows you to download YouTube videos in 1080p and combine the audio and video into a single MP4 file.
+This personal repository is designed for downloading YouTube videos at the highest available resolution. It combines both audio and video into a single MP4 file using the `yt_dlp` library.
 
 ## Requirements
 
 - Python 3.x
-- Python Libraries: `pytube`, `ffmpeg` (or `ffmpeg-python`)
+- Python Libraries: `yt_dlp`
+- FFmpeg (version 7.x.x or higher is highly recommended for 4K video support)
 
 ## Installation
 
@@ -14,15 +15,15 @@ This script allows you to download YouTube videos in 1080p and combine the audio
    You can install the dependencies using `pip`:
 
    ```bash
-   pip install pytube
+   pip install yt-dlp
    ```
 
-   **Note**: Ensure that `ffmpeg` is installed on your system. Follow the instructions on [FFmpeg - Official Website](https://ffmpeg.org/download.html) to install it.
+   **Note**: Ensure that `ffmpeg` is installed on your system. Follow the instructions on [FFmpeg - Official Website](https://ffmpeg.org/download.html) to install it. It is highly recommended to use FFmpeg version 7.x.x or higher for better support, including 4K video downloads.
 
 2. **Install `ffmpeg`**:
 
    **On Windows**:
-   
+
    1. Go to the [FFmpeg download page](https://ffmpeg.org/download.html).
    2. Click on “Windows” and then on “Windows builds by BtbN”.
    3. Download the latest ZIP file.
@@ -54,15 +55,13 @@ This script allows you to download YouTube videos in 1080p and combine the audio
    Clone the repository containing the script from GitHub:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/bielwdev/yt-downloader.git
    ```
-
-   Replace `<repository-url>` with the URL of your GitHub repository.
 
 ## Usage
 
 1. Open a terminal or command prompt.
-2. Navigate to the directory where the `youtube_downloader.py` file is located.
+2. Navigate to the directory where the `ytdownloader.py` file is located.
 3. Run the script with the command:
 
    ```bash
@@ -71,16 +70,12 @@ This script allows you to download YouTube videos in 1080p and combine the audio
 
 4. When prompted, enter the URL of the YouTube video you want to download and press Enter.
 
-The script will download the video in 1080p and the audio in MP4 format, combine both using `ffmpeg`, and save the result in the same directory with the video title as the filename.
+The script will download the video in max resolution available and the audio in MP4 format, combine both using `ffmpeg`, and save the result in the same directory with the video title as the filename.
 
 ## Notes
 
 - `ffmpeg` must be correctly installed and configured on your system for the script to work. Ensure that the `ffmpeg` executable is in your PATH.
-
-- If the 1080p video is not available, the script will inform you and will not proceed with the download.
-
+- It is highly recommended to use FFmpeg version 7.x.x or higher to support 4K video downloads.
 - The resulting file name will be based on the video title, with special characters replaced to avoid file naming issues.
 
 ---
-
-Feel free to adjust as needed!
