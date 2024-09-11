@@ -5,11 +5,14 @@ def ytdownloader(url):
         ydl_opts = {
             'merge_output_format': 'mp4',
             'outtmpl': '%(title)s.%(ext)s',
-            'concurrent_fragments': '8',
-            'throttled-rate': '0',
+            'concurrent_fragments': 8,
+            'throttled-rate': 0,
             'external_downloader_args': ['-multi_thread', '-threads', '0'],
             'quiet': True,
         }
+        
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([url])
         
         print('Download completed.')
     
@@ -19,4 +22,4 @@ def ytdownloader(url):
 
 # Example usage
 url = input('Enter the URL of the YouTube video: ')
-resolution = ytdownloader(url)
+ytdownloader(url)
